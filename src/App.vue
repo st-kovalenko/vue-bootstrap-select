@@ -12,7 +12,7 @@
         searchable
       </div>
     </div>
-    <VSelect
+    <VueBootstrapSelect
       v-model="selectedName"
       :options="names"
       :disabled="disabledName"
@@ -27,9 +27,9 @@
       <div>
         <input type="checkbox" v-model="searchableContinent">
         searchable
-      </div>      
+      </div>
     </div>
-    <VSelect
+    <VueBootstrapSelect
       v-model="selectedContinent"
       :options="contients"
       :disabled="disabledContinent"
@@ -39,12 +39,12 @@
 </template>
 
 <script>
-import VSelect from "@/vue-bootstrap-select";
+import VueBootstrapSelect from "@/vue-bootstrap-select";
 
 export default {
   name: "App",
   components: {
-    VSelect
+    VueBootstrapSelect
   },
   data() {
     return {
@@ -73,7 +73,6 @@ export default {
   }
 };
 </script>
-
 
 <style lang="scss" scoped>
 #app {

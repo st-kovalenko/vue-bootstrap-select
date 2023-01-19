@@ -1,29 +1,33 @@
 
-[![AUR version](https://img.shields.io/npm/v/@alfsnd/vue-bootstrap-select.svg)](https://github.com/Sandalf/vue-bootstrap-select)
-[![npm bundle size (minified)](https://img.shields.io/bundlephobia/min/react.svg)](https://github.com/Sandalf/vue-bootstrap-select)
+# Vue.js dropdown with search box
+A Vue.js 3 version of [bootstrap select](https://github.com/snapappointments/bootstrap-select/).
 
-# @alfsnd/vue-bootstrap-select
-A vue version of [bootstrap select](https://github.com/snapappointments/bootstrap-select/)
+## About
+A component that allows you to search select options.
 
-# Demo
+This project is a fork from the original [Sandalf/vue-bootstrap-select](https://github.com/Sandalf/vue-bootstrap-select) project which is no longer maintained.
 
-[![Edit Vue Bootstrap Select Demo](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/ovq821j566)
+## Requirements
 
-# Install
+- Vue.js 3
+- Bootstrap CSS
+
+## Install
 
 ```shell
-npm install @alfsnd/vue-bootstrap-select --save
+npm install st-kovalenko/vue-bootstrap-select --save
 ```
 
-# Usage
+## Usage
 
 ```js
-import VSelect from '@alfsnd/vue-bootstrap-select'
+import VueBootstrapSelect from 'vue-bootstrap-select'
+import 'vue-bootstrap-select/dist/style.css'
 
 export default {
   name: 'app',
   components: {
-    VSelect
+    VueBootstrapSelect
   },
   data() {
     return {
@@ -36,22 +40,22 @@ export default {
 ```html
 <template>
   <div id="app">
-    <v-select :options="[{value: 1, text: 'Item 1'}, {value: 2, text: 'Item 2'}]" v-model="selectedValue" />
+    <VueBootstrapSelect :options="[{value: 1, text: 'Item 1'}, {value: 2, text: 'Item 2'}]" v-model="selectedValue" />
   </div>
 </template>
 ```
 
 ### Passing options
 
-The `options` prop accepts arrays of strings
+The `options` property accepts arrays of strings.
 
 ```html
-  <v-select :options="['Item 1', 'Item 2']" />
+<VueBootstrapSelect :options="['Item 1', 'Item 2']" />
 ```
 And arrays of objects
 
 ```html
-<v-select :options="[{value: 1, text: 'Item 1'}, {value: 2, text: 'Item 2'}]" />
+<VueBootstrapSelect :options="[{value: 1, text: 'Item 1'}, {value: 2, text: 'Item 2'}]" />
 ```
 
 ## Props
@@ -68,3 +72,13 @@ And arrays of objects
 | textProp | the option's prop that is displayed as the option's text | String | text | |
 | valueProp | the option's prop that is used to find the selected value | String | value |
 
+## Testing
+Tested with the following configuration:
+
+- Node.js:
+- NPM:
+- Vue.js: 
+
+```shell
+npm run serve
+```

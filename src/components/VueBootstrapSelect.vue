@@ -1,6 +1,6 @@
 <template>
   <div
-    v-on-clickaway="hideDropdown"
+    v-click-away="hideDropdown"
     @keyup.esc="onEscape"
     @keydown.up.prevent="typeAheadUp"
     @keydown.down.prevent="typeAheadDown"
@@ -43,11 +43,11 @@
 </template>
 
 <script>
-import { mixin as clickaway } from "vue-clickaway";
+import { mixin as VueClickAway } from "vue3-click-away";
 
 export default {
-  name: "VSelect",
-  mixins: [clickaway],
+  name: "VueBootstrapSelect",
+  mixins: [VueClickAway],
   props: {
     disabled: {
       type: Boolean,

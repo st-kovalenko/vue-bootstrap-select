@@ -1,6 +1,6 @@
 {
     "name": "@st-kovalenko/vue-bootstrap-select",
-    "version": "0.5.0",
+    "version": "0.5.1",
     "description": "A Vue.js 3 version of bootstrap select.",
     "license": "MIT",
     "repository": "st-kovalenko/vue-bootstrap-select",

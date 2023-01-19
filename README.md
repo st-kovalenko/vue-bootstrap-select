@@ -15,14 +15,14 @@ This project is a fork from the original [Sandalf/vue-bootstrap-select](https://
 ## Install
 
 ```shell
-npm install st-kovalenko/vue-bootstrap-select --save
+npm install @st-kovalenko/vue-bootstrap-select --save
 ```
 
 ## Usage
 
 ```js
-import VueBootstrapSelect from 'vue-bootstrap-select'
-import 'vue-bootstrap-select/dist/style.css'
+import VueBootstrapSelect from '@st-kovalenko/vue-bootstrap-select'
+import '@st-kovalenko/vue-bootstrap-select/dist/style.css'
 
 export default {
   name: 'app',

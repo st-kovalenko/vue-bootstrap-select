@@ -1,5 +1,12 @@
 <template>
   <div id="app">
+    <a href="https://vitejs.dev" target="_blank">
+      <img src="@/assets/vite.svg" class="logo" alt="Vite logo" />
+    </a>
+    <a href="https://vuejs.org/" target="_blank">
+      <img src="@/assets/vue.svg" class="logo vue" alt="Vue logo" />
+    </a>
+    <hr style="margin-top: 50px; margin-bottom: 50px;">
     <h2>Array of strings</h2>
     <div class="options">
       <p><b>Options:</b></p>
@@ -87,5 +94,19 @@ export default {
 .options {
   text-align: left;
   padding: 1em 0em;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+
+.logo.vue:hover {
+  filter: drop-shadow(0 0 2em #42b883aa);
 }
 </style>

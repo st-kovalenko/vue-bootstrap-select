@@ -1,4 +1,4 @@
-import VueBootstrapSelect from "./components/VueBootstrapSelect.vue";
+import VueBootstrapSelect from "@/components/VueBootstrapSelect.vue";
 
 export default {
     install: (app, options) => {

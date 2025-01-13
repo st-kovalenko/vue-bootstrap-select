@@ -39,7 +39,7 @@
 </template>
 
 <script>
-import VueBootstrapSelect from "@/vue-bootstrap-select";
+import VueBootstrapSelect from '@/components/VueBootstrapSelect.vue';
 
 export default {
   name: "App",

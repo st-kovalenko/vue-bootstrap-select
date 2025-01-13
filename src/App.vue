@@ -6,10 +6,12 @@
     <a href="https://vuejs.org/" target="_blank">
       <img src="@/assets/vue.svg" class="logo vue" alt="Vue logo" />
     </a>
-    <hr style="margin-top: 50px; margin-bottom: 50px;">
-    <h2>Array of strings</h2>
+    <hr>
+    <h2>Example with array of strings</h2>
     <div class="options">
-      <p><b>Options:</b></p>
+      <p>
+        <b>Options:</b>
+      </p>
       <div>
         <input type="checkbox" v-model="disabledName">
         disabled
@@ -23,10 +25,14 @@
       v-model="selectedName"
       :options="names"
       :disabled="disabledName"
-      :searchable="searchableName"/>
-    <h2>Array of objects</h2>
+      :searchable="searchableName"
+    />
+    <hr>
+    <h2>Example with array of objects</h2>
     <div class="options">
-      <p><b>Options:</b></p>
+      <p>
+        <b>Options:</b>
+      </p>
       <div>
         <input type="checkbox" v-model="disabledContinent">
         disabled
@@ -41,7 +47,8 @@
       :options="contients"
       :disabled="disabledContinent"
       disabled-prop="inactive"
-      :searchable="searchableContinent"/>
+      :searchable="searchableContinent"
+    />
   </div>
 </template>
 
@@ -87,7 +94,7 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #a1b3c5;
   padding: 2em 1em;
 }
 
@@ -108,5 +115,10 @@ export default {
 
 .logo.vue:hover {
   filter: drop-shadow(0 0 2em #42b883aa);
+}
+
+hr {
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 </style>

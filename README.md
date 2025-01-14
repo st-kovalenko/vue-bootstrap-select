@@ -1,84 +1,200 @@
+# Vue Bootstrap Select Dropdown
 
-# Vue.js dropdown with search box
-A Vue.js 3 version of [bootstrap select](https://github.com/snapappointments/bootstrap-select/).
+A simple **Vue.js 3** dropdown-select component project with an integrated search bar, based on Bootstrap CSS.
+This project provides a user-friendly dropdown with support for arrays, objects and dynamic configurations.
 
-## About
-A component that allows you to search select options.
+## Overview
 
-This project is a fork from the original [Sandalf/vue-bootstrap-select](https://github.com/Sandalf/vue-bootstrap-select) project which is no longer maintained.
+The **Vue Bootstrap Select Dropdown** is a component-based solution inspired by the original [bootstrap select](https://github.com/snapappointments/bootstrap-select/).
+This modern Vue.js version offers a lightweight, flexible, and extendable dropdown component.
+
+This project is a fork from the original Vue.js 2 [Sandalf/vue-bootstrap-select](https://github.com/Sandalf/vue-bootstrap-select) project which is no longer maintained.
+
+> [!IMPORTANT]
+> This component is no longer actively developed or maintained.
+> However, you are welcome to create a merge request or fork this project to customize it as needed.
+
+### ✨ Features:
+
+- **Searchable:** Includes a search field for easier option filtering.
+- **Highly customizable:** Supports various data types (arrays or objects of strings).
+- **Reactive:** Works seamlessly with `v-model` directives for data binding.
+- **Accessibility:** Supports disabled options and user-friendly selection.
+- **Easy integration:** Built on Vue 3 and compatible with Bootstrap CSS.
+
+---
 
 ## Requirements
 
-- Vue.js 3
-- Bootstrap CSS
+To use this component, the following requirements must be met:
 
-## Install
+- **Vue.js 3**
+- **Node.js 20.15.1** for installation
+- **Bootstrap CSS 4 or 5** for styling
 
-```shell
+---
+
+## Installation
+
+Install the package via **npm**:
+
+```bash
 npm install @st-kovalenko/vue-bootstrap-select --save
 ```
 
-## Usage
+**Including styles:**
+In addition to JavaScript, you'll need to import the styles:
 
-```js
-import VueBootstrapSelect from '@st-kovalenko/vue-bootstrap-select'
-import '@st-kovalenko/vue-bootstrap-select/dist/style.css'
+```javascript
+import '@st-kovalenko/vue-bootstrap-select/dist/style.css';
+```
+
+---
+
+## Quick Usage
+
+### Example with an Array of Objects
+
+Integrate the component into your Vue app:
+
+```javascript
+import VueBootstrapSelect from '@st-kovalenko/vue-bootstrap-select';
 
 export default {
-  name: 'app',
+  name: 'App',
   components: {
-    VueBootstrapSelect
+    VueBootstrapSelect,
   },
   data() {
     return {
-      selectedValue: null
+      options: [
+        { value: 1, text: 'Option 1' },
+        { value: 2, text: 'Option 2' },
+      ],
+      selectedValue: null,
     };
-  }
-}
+  },
+};
 ```
+
+Include the component in your template:
 
 ```html
-<template>
-  <div id="app">
-    <VueBootstrapSelect :options="[{value: 1, text: 'Item 1'}, {value: 2, text: 'Item 2'}]" v-model="selectedValue" />
-  </div>
-</template>
+<VueBootstrapSelect
+  :options="options"
+  v-model="selectedValue"
+/>
 ```
 
-### Passing options
+---
 
-The `options` property accepts arrays of strings.
+## Configuration & Properties
+
+### Available Properties
+
+| Property                 | Description                                                                                                                  | Type    | Default Value          | Acceptable Values  |
+|--------------------------|------------------------------------------------------------------------------------------------------------------------------|---------|------------------------|--------------------|
+| `options`                | List of dropdown values.                                                                                                     | Array   | `[]`                   | Strings or objects |
+| `searchable`             | Enables search mode.                                                                                                         | Boolean | `false`                | `true`, `false`    |
+| `showDefaultOption`      | Sets the select title is set as an option.                                                                                   | Boolean | `false`                | `true`, `false`    |
+| `disabled`               | Disables the dropdown.                                                                                                       | Boolean | `false`                | `true`, `false`    |
+| `disabledProp`           | Defines a property to disable specific options. If an option has this prop set to a truthy value it will disable the option. | String  | `'disabled'`           | -                  |
+| `labelNotFound`          | Text displayed when no option is found in the search results.                                                                | String  | `'No results matched'` | -                  |
+| `labelSearchPlaceholder` | Placeholder text for the search field.                                                                                       | String  | `'Search'`             | -                  |
+| `textProp`               | Attribute of an object used as the displayed text value (for object arrays).                                                 | String  | `'text'`               | -                  |
+| `valueProp`              | Attribute of an object used as the corresponding value (for object arrays).                                                  | String  | `'value'`              | -                  |
+
+---
+
+### Examples
+
+#### Using an Array of Strings
 
 ```html
-<VueBootstrapSelect :options="['Item 1', 'Item 2']" />
+<VueBootstrapSelect :options="['Option A', 'Option B']" />
 ```
-And arrays of objects
+
+#### Using an Array of Objects with Custom Values
 
 ```html
-<VueBootstrapSelect :options="[{value: 1, text: 'Item 1'}, {value: 2, text: 'Item 2'}]" />
+<VueBootstrapSelect :options="[{ value: 1, text: 'Option A' }, { value: 2, text: 'Option B' }]" />
 ```
 
-## Props
+---
 
-| parameter      | description                                                                                                                                    | type                                   | default      | acceptable value |
-| -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------- | ------------ | ---------------- |
-| disabled | disables select | Boolean | false   | |
-| disabledProp | allows to disable specific options. If an option has this prop set to a truthy value it will disable the option. | String | disabled |  |
-| labelNotFound | text displayed when no option is found in the search results | String | No results matched ||
-| labelSearchPlaceholder | placeholder text for search input | String | Search | |
-| options | list of options | Array | [] | |
-| searchable | display search input | Boolean | false |  |
-| showDefaultOption | sets the select title is set as an option | Boolean | false | |
-| textProp | the option's prop that is displayed as the option's text | String | text | |
-| valueProp | the option's prop that is used to find the selected value | String | value |
+## Development
 
-## Testing
-Tested with the following configuration:
+### Run Dev Server:
 
-- Node.js:
-- NPM:
-- Vue.js: 
+To run the project locally:
 
-```shell
+```bash
 npm run serve
 ```
+
+### Local Development Environment:
+
+This project has been tested with the following versions:
+
+- Node.js: **20.x**
+- Vue.js: **3.x**
+- NPM: **10.x**
+
+---
+
+## Component Preview
+
+### Example Component Implementations:
+
+1. **Array of Strings:** Create simple dropdown menus with string-based values.
+2. **Array of Objects:** Enable object-based selections with custom labels and values.
+
+#### Code Examples:
+
+```html
+<VueBootstrapSelect
+  :options="['Apple', 'Banana', 'Grapes']"
+  v-model="fruit"
+  :searchable="true"
+/>
+
+<VueBootstrapSelect
+  :options="[{ value: 1, text: 'German' }, { value: 2, text: 'English' }]"
+  v-model="language"
+  :searchable="true"
+  :disabled="false"
+/>
+```
+
+---
+
+## Compatibility and Styles
+
+This component uses SCSS for styles. To ensure proper appearance, include the required Bootstrap CSS styles:
+
+```bash
+npm install bootstrap
+```
+
+Import Bootstrap in your project:
+
+```javascript
+import 'bootstrap/dist/css/bootstrap.min.css';
+```
+
+---
+
+## Contributing
+
+We welcome contributions! Please open pull requests or issues if you find bugs or have improvement suggestions.
+
+1. Fork the repository.
+2. Create a branch for your changes.
+3. Test changes thoroughly in a development environment.
+4. Open a pull request.
+
+---
+
+### License
+
+This project is licensed under the [MIT License](LICENSE).

@@ -26,6 +26,8 @@
     },
     "scripts": {
         "dev": "vite",
+        "lint": "eslint",
+        "prettier": "prettier . --write .",
         "build": "vite build",
         "preview": "vite preview"
     },

@@ -39,14 +39,14 @@ To use this component, the following requirements must be met:
 Install the package via **npm**:
 
 ```bash
-npm install @st-kovalenko/vue-bootstrap-select --save
+npm install @stanislav-ernst/vue-bootstrap-select --save
 ```
 
 **Including styles:**
 In addition to JavaScript, you'll need to import the styles:
 
 ```javascript
-import '@st-kovalenko/vue-bootstrap-select/dist/style.css';
+import '@stanislav-ernst/vue-bootstrap-select/dist/style.css';
 ```
 
 ---
@@ -58,7 +58,7 @@ import '@st-kovalenko/vue-bootstrap-select/dist/style.css';
 Integrate the component into your Vue app:
 
 ```javascript
-import VueBootstrapSelect from '@st-kovalenko/vue-bootstrap-select';
+import VueBootstrapSelect from '@stanislav-ernst/vue-bootstrap-select';
 
 export default {
   name: 'App',

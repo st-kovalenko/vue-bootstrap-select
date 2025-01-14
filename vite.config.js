@@ -7,7 +7,7 @@ export default defineConfig({
     build: {
         lib: {
             entry: path.resolve(__dirname, "src/index.js"),
-            name: "vue-bootstrap-select",
+            name: "VueBootstrapSelect",
             fileName: (format) => `vue-bootstrap-select.${format}.js`,
         },
         rollupOptions: {
@@ -27,4 +27,7 @@ export default defineConfig({
     plugins: [
         vue(),
     ],
+    server: {
+        //port: 5176,
+    },
 })

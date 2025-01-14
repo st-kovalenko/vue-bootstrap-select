@@ -46,7 +46,7 @@ npm install @stanislav-ernst/vue-bootstrap-select --save
 In addition to JavaScript, you'll need to import the styles:
 
 ```javascript
-import '@stanislav-ernst/vue-bootstrap-select/dist/style.css';
+import "@stanislav-ernst/vue-bootstrap-select/dist/style.css";
 ```
 
 ---
@@ -58,32 +58,29 @@ import '@stanislav-ernst/vue-bootstrap-select/dist/style.css';
 Integrate the component into your Vue app:
 
 ```javascript
-import VueBootstrapSelect from '@stanislav-ernst/vue-bootstrap-select';
+import VueBootstrapSelect from "@stanislav-ernst/vue-bootstrap-select";
 
 export default {
-  name: 'App',
-  components: {
-    VueBootstrapSelect,
-  },
-  data() {
-    return {
-      options: [
-        { value: 1, text: 'Option 1' },
-        { value: 2, text: 'Option 2' },
-      ],
-      selectedValue: null,
-    };
-  },
+    name: "App",
+    components: {
+        VueBootstrapSelect,
+    },
+    data() {
+        return {
+            options: [
+                { value: 1, text: "Option 1" },
+                { value: 2, text: "Option 2" },
+            ],
+            selectedValue: null,
+        };
+    },
 };
 ```
 
 Include the component in your template:
 
 ```html
-<VueBootstrapSelect
-  :options="options"
-  v-model="selectedValue"
-/>
+<VueBootstrapSelect :options="options" v-model="selectedValue" />
 ```
 
 ---
@@ -93,7 +90,7 @@ Include the component in your template:
 ### Available Properties
 
 | Property                 | Description                                                                                                                  | Type                   | Default Value          | Acceptable Values  |
-|--------------------------|------------------------------------------------------------------------------------------------------------------------------|------------------------|------------------------|--------------------|
+| ------------------------ | ---------------------------------------------------------------------------------------------------------------------------- | ---------------------- | ---------------------- | ------------------ |
 | `options`                | List of dropdown values.                                                                                                     | Array                  | `[]`                   | Strings or objects |
 | `searchable`             | Enables search mode.                                                                                                         | Boolean                | `false`                | `true`, `false`    |
 | `showDefaultOption`      | Sets the select title is set as an option.                                                                                   | Boolean                | `false`                | `true`, `false`    |
@@ -120,7 +117,9 @@ Include the component in your template:
 #### Using an Array of Objects with Custom Values
 
 ```html
-<VueBootstrapSelect :options="[{ value: 1, text: 'Option A' }, { value: 2, text: 'Option B' }]" />
+<VueBootstrapSelect
+    :options="[{ value: 1, text: 'Option A' }, { value: 2, text: 'Option B' }]"
+/>
 ```
 
 ---
@@ -156,16 +155,16 @@ This project has been tested with the following versions:
 
 ```html
 <VueBootstrapSelect
-  :options="['Apple', 'Banana', 'Grapes']"
-  v-model="fruit"
-  :searchable="true"
+    :options="['Apple', 'Banana', 'Grapes']"
+    v-model="fruit"
+    :searchable="true"
 />
 
 <VueBootstrapSelect
-  :options="[{ value: 1, text: 'German' }, { value: 2, text: 'English' }]"
-  v-model="language"
-  :searchable="true"
-  :disabled="false"
+    :options="[{ value: 1, text: 'German' }, { value: 2, text: 'English' }]"
+    v-model="language"
+    :searchable="true"
+    :disabled="false"
 />
 ```
 
@@ -182,7 +181,7 @@ npm install bootstrap
 Import Bootstrap in your project:
 
 ```javascript
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 ```
 
 ---

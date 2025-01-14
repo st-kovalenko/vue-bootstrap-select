@@ -6,18 +6,18 @@
     <a href="https://vuejs.org/" target="_blank">
       <img src="@/assets/vue.svg" class="logo vue" alt="Vue logo" />
     </a>
-    <hr>
+    <hr />
     <h2>Example with array of strings</h2>
     <div class="options">
       <p>
         <b>Options:</b>
       </p>
       <div>
-        <input type="checkbox" v-model="disabledName">
+        <input type="checkbox" v-model="disabledName" />
         disabled
       </div>
       <div>
-        <input type="checkbox" v-model="searchableName">
+        <input type="checkbox" v-model="searchableName" />
         searchable
       </div>
     </div>
@@ -27,18 +27,18 @@
       :disabled="disabledName"
       :searchable="searchableName"
     />
-    <hr>
+    <hr />
     <h2>Example with array of objects</h2>
     <div class="options">
       <p>
         <b>Options:</b>
       </p>
       <div>
-        <input type="checkbox" v-model="disabledContinent">
+        <input type="checkbox" v-model="disabledContinent" />
         disabled
       </div>
       <div>
-        <input type="checkbox" v-model="searchableContinent">
+        <input type="checkbox" v-model="searchableContinent" />
         searchable
       </div>
     </div>
@@ -53,12 +53,12 @@
 </template>
 
 <script>
-import VueBootstrapSelect from '@/components/VueBootstrapSelect.vue';
+import VueBootstrapSelect from "@/components/VueBootstrapSelect.vue";
 
 export default {
   name: "App",
   components: {
-    VueBootstrapSelect
+    VueBootstrapSelect,
   },
   data() {
     return {
@@ -67,7 +67,7 @@ export default {
         "Olive Yew",
         "Aida Bugg",
         "Teri Dactyl",
-        "Paige Turner"
+        "Paige Turner",
       ],
       contients: [
         { value: 0, text: "Africa" },
@@ -75,16 +75,16 @@ export default {
         { value: 2, text: "Asia" },
         { value: 3, text: "Europe" },
         { value: 4, text: "Oceania" },
-        { value: 5, text: "Antartica" }
+        { value: 5, text: "Antartica" },
       ],
       selectedName: null,
       searchableName: false,
       disabledName: false,
       selectedContinent: null,
       searchableContinent: false,
-      disabledContinent: false
+      disabledContinent: false,
     };
-  }
+  },
 };
 </script>
 

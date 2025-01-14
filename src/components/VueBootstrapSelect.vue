@@ -6,7 +6,8 @@
     @keydown.down.prevent="typeAheadDown"
     @keydown.enter.prevent="typeAheadSelect"
     class="v-select"
-    :class="{'disabled': disabled}">
+    :class="{ disabled: disabled }"
+  >
     <button @click="toggle" type="button" class="v-select-toggle">
       <div>{{ title }}</div>
       <div class="arrow-down"></div>
@@ -19,24 +20,36 @@
           type="text"
           v-model="searchValue"
           autofocus
-        >
+        />
       </div>
       <ul>
         <li
           v-show="searchable && filteredOptions.length === 0"
           class="v-dropdown-item"
-        >{{ labelNotFound }} "{{ searchValue }}"</li>
+        >
+          {{ labelNotFound }} "{{ searchValue }}"
+        </li>
         <li
           v-if="showDefaultOption"
           class="v-dropdown-item disabled default-option"
-        >{{ labelTitle }}</li>
+        >
+          {{ labelTitle }}
+        </li>
         <li
           v-for="(option, index) in filteredOptions"
           :key="`v-select-${index}`"
           class="v-dropdown-item"
-          :class="{'selected' : isSelectedOption(option, index), 'disabled': option[disabledProp]}"
+          :class="{
+            selected: isSelectedOption(option, index),
+            disabled: option[disabledProp],
+          }"
           @click="onSelect(option, index)"
-        >{{ getOptionLabel(option) }} <span class="text-muted">{{ getOptionDescriptionLabel(option) }}</span></li>
+        >
+          {{ getOptionLabel(option) }}
+          <span class="text-muted">{{
+            getOptionDescriptionLabel(option)
+          }}</span>
+        </li>
       </ul>
     </div>
   </div>
@@ -51,39 +64,39 @@ export default {
   props: {
     disabled: {
       type: Boolean,
-      default: false
+      default: false,
     },
     disabledProp: {
       type: String,
-      default: "disabled"
+      default: "disabled",
     },
     labelTitle: {
       type: String,
-      default: "Nothing selected"
+      default: "Nothing selected",
     },
     labelNotFound: {
       type: String,
-      default: "No results matched"
+      default: "No results matched",
     },
     labelSearchPlaceholder: {
       type: String,
-      default: "Search"
+      default: "Search",
     },
     options: {
       type: Array,
-      default: () => []
+      default: () => [],
     },
     searchable: {
       type: Boolean,
-      default: false
+      default: false,
     },
     showDefaultOption: {
       type: Boolean,
-      default: false
+      default: false,
     },
     textProp: {
       type: String,
-      default: "text"
+      default: "text",
     },
     descriptionProp: {
       type: Array,
@@ -91,19 +104,19 @@ export default {
     },
     modelValue: {
       type: [Object, String, Number],
-      default: null
+      default: null,
     },
     valueProp: {
       type: String,
-      default: "value"
-    }
+      default: "value",
+    },
   },
   data() {
     return {
       show: false,
       selectedValue: null,
       searchValue: "",
-      typeAheadPointer: -1
+      typeAheadPointer: -1,
     };
   },
   computed: {
@@ -114,7 +127,7 @@ export default {
     },
     filteredOptions() {
       if (this.searchable && this.searchValue.length > 0) {
-        return this.options.filter(item => {
+        return this.options.filter((item) => {
           if (typeof item === "object") {
             return (
               item[this.textProp]
@@ -135,18 +148,18 @@ export default {
     },
     lastOptionIndex() {
       return this.filteredOptions.length - 1;
-    }
+    },
   },
   watch: {
     modelValue: {
       immediate: true,
       handler(newVal) {
-        const index = this.options.findIndex(op =>
-          this.isEqualOption(op, newVal)
+        const index = this.options.findIndex((op) =>
+          this.isEqualOption(op, newVal),
         );
         this.onSelect(newVal, index);
-      }
-    }
+      },
+    },
   },
   methods: {
     onSelect(option, index) {
@@ -180,7 +193,7 @@ export default {
         }
       } else {
         const nextEnabledOption = this.reversedOptions.findIndex(
-          o => o[this.disabledProp] !== true
+          (o) => o[this.disabledProp] !== true,
         );
         this.typeAheadPointer = this.lastOptionIndex - nextEnabledOption;
       }
@@ -201,7 +214,7 @@ export default {
         }
       } else {
         const nextEnabledOption = this.filteredOptions.findIndex(
-          o => o[this.disabledProp] !== true
+          (o) => o[this.disabledProp] !== true,
         );
         this.typeAheadPointer = nextEnabledOption;
       }
@@ -210,7 +223,7 @@ export default {
       if (this.filteredOptions[this.typeAheadPointer]) {
         this.onSelect(
           this.filteredOptions[this.typeAheadPointer],
-          this.typeAheadPointer
+          this.typeAheadPointer,
         );
       }
     },
@@ -226,16 +239,17 @@ export default {
     },
     getOptionDescriptionLabel(option) {
       if (typeof option === "object") {
-          let resultDescription = "";
-          this.descriptionProp.forEach(function (description) {
-              if (option[description]) {
-                  if (resultDescription === "") {
-                      resultDescription = option[description];
-                  } else {
-                      resultDescription = resultDescription + " - " + option[description];
-                  }
-              }
-          });
+        let resultDescription = "";
+        this.descriptionProp.forEach(function (description) {
+          if (option[description]) {
+            if (resultDescription === "") {
+              resultDescription = option[description];
+            } else {
+              resultDescription =
+                resultDescription + " - " + option[description];
+            }
+          }
+        });
 
         return "- " + resultDescription;
       }
@@ -260,8 +274,8 @@ export default {
       if (!this.disabled) {
         this.show = !this.show;
       }
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -324,7 +338,11 @@ ul {
   font-family: inherit, sans-serif;
   line-height: 1.5;
   border-radius: 0.25rem;
-  transition: background-color, border-color, box-shadow, 0.15s ease-in-out;
+  transition:
+    background-color,
+    border-color,
+    box-shadow,
+    0.15s ease-in-out;
   cursor: pointer;
 
   &:hover {
@@ -410,7 +428,9 @@ ul {
     background-clip: padding-box;
     border: 1px solid #ced4da;
     border-radius: 0.25rem;
-    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    transition:
+      border-color 0.15s ease-in-out,
+      box-shadow 0.15s ease-in-out;
   }
 }
 

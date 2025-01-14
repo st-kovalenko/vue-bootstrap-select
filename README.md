@@ -92,17 +92,20 @@ Include the component in your template:
 
 ### Available Properties
 
-| Property                 | Description                                                                                                                  | Type    | Default Value          | Acceptable Values  |
-|--------------------------|------------------------------------------------------------------------------------------------------------------------------|---------|------------------------|--------------------|
-| `options`                | List of dropdown values.                                                                                                     | Array   | `[]`                   | Strings or objects |
-| `searchable`             | Enables search mode.                                                                                                         | Boolean | `false`                | `true`, `false`    |
-| `showDefaultOption`      | Sets the select title is set as an option.                                                                                   | Boolean | `false`                | `true`, `false`    |
-| `disabled`               | Disables the dropdown.                                                                                                       | Boolean | `false`                | `true`, `false`    |
-| `disabledProp`           | Defines a property to disable specific options. If an option has this prop set to a truthy value it will disable the option. | String  | `'disabled'`           | -                  |
-| `labelNotFound`          | Text displayed when no option is found in the search results.                                                                | String  | `'No results matched'` | -                  |
-| `labelSearchPlaceholder` | Placeholder text for the search field.                                                                                       | String  | `'Search'`             | -                  |
-| `textProp`               | Attribute of an object used as the displayed text value (for object arrays).                                                 | String  | `'text'`               | -                  |
-| `valueProp`              | Attribute of an object used as the corresponding value (for object arrays).                                                  | String  | `'value'`              | -                  |
+| Property                 | Description                                                                                                                  | Type                   | Default Value          | Acceptable Values  |
+|--------------------------|------------------------------------------------------------------------------------------------------------------------------|------------------------|------------------------|--------------------|
+| `options`                | List of dropdown values.                                                                                                     | Array                  | `[]`                   | Strings or objects |
+| `searchable`             | Enables search mode.                                                                                                         | Boolean                | `false`                | `true`, `false`    |
+| `showDefaultOption`      | Sets the select title is set as an option.                                                                                   | Boolean                | `false`                | `true`, `false`    |
+| `disabled`               | Disables the dropdown.                                                                                                       | Boolean                | `false`                | `true`, `false`    |
+| `disabledProp`           | Defines a property to disable specific options. If an option has this prop set to a truthy value it will disable the option. | String                 | `'disabled'`           | -                  |
+| `labelNotFound`          | Text displayed when no option is found in the search results.                                                                | String                 | `'No results matched'` | -                  |
+| `labelSearchPlaceholder` | Placeholder text for the search field.                                                                                       | String                 | `'Search'`             | -                  |
+| `textProp`               | Attribute of an object used as the displayed text value (for object arrays).                                                 | String                 | `'text'`               | -                  |
+| `valueProp`              | Attribute of an object used as the corresponding value (for object arrays).                                                  | String                 | `'value'`              | -                  |
+| `labelTitle`             | Text displayed when no option is selected and `showDefaultOption` is not set.                                                | String                 | `'Nothing selected'`   | -                  |
+| `descriptionProp`        | Defines the keys used to show additional description for options.                                                            | Array                  | `["description"]`      | -                  |
+| `modelValue`             | The current value of the dropdown, bound with v-model, and synchronized with the selected option.                            | Object, String, Number | `null`                 | -                  |
 
 ---
 

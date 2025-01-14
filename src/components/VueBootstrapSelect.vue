@@ -36,7 +36,7 @@
           class="v-dropdown-item"
           :class="{'selected' : isSelectedOption(option, index), 'disabled': option[disabledProp]}"
           @click="onSelect(option, index)"
-        >{{ getOptionLabel(option) }}</li>
+        >{{ getOptionLabel(option) }} <span class="text-muted">{{ getOptionDescriptionLabel(option) }}</span></li>
       </ul>
     </div>
   </div>
@@ -85,7 +85,11 @@ export default {
       type: String,
       default: "text"
     },
-    value: {
+    descriptionProp: {
+      type: Array,
+      default: ["description"],
+    },
+    modelValue: {
       type: [Object, String, Number],
       default: null
     },
@@ -134,7 +138,7 @@ export default {
     }
   },
   watch: {
-    value: {
+    modelValue: {
       immediate: true,
       handler(newVal) {
         const index = this.options.findIndex(op =>
@@ -150,7 +154,9 @@ export default {
         this.selectedValue = option;
         this.typeAheadPointer = index;
         this.hideDropdown();
-        this.$emit("input", option, option[this.valueProp], index);
+
+        // https://v3-migration.vuejs.org/breaking-changes/v-model.html
+        this.$emit("update:modelValue", option, option[this.valueProp], index);
       } else if (option === null) {
         this.selectedValue = null;
       }
@@ -217,6 +223,23 @@ export default {
         return option[this.textProp];
       }
       return option;
+    },
+    getOptionDescriptionLabel(option) {
+      if (typeof option === "object") {
+          let resultDescription = "";
+          this.descriptionProp.forEach(function (description) {
+              if (option[description]) {
+                  if (resultDescription === "") {
+                      resultDescription = option[description];
+                  } else {
+                      resultDescription = resultDescription + " - " + option[description];
+                  }
+              }
+          });
+
+        return "- " + resultDescription;
+      }
+      return "";
     },
     isSelectedOption(option, index) {
       if (this.typeAheadPointer === -1 && this.selectedValue) {
@@ -389,5 +412,9 @@ ul {
     border-radius: 0.25rem;
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   }
+}
+
+.text-muted {
+  color: #6c757d !important;
 }
 </style>

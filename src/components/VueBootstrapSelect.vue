@@ -100,7 +100,7 @@ export default {
     },
     descriptionProp: {
       type: Array,
-      default: ["description"],
+      default: () => ["description"],
     },
     modelValue: {
       type: [Object, String, Number],

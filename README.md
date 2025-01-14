@@ -46,7 +46,7 @@ npm install @stanislav-ernst/vue-bootstrap-select --save
 In addition to JavaScript, you'll need to import the styles:
 
 ```javascript
-import "@stanislav-ernst/vue-bootstrap-select/dist/style.css";
+import "@stanislav-ernst/vue-bootstrap-select/dist/vue-bootstrap-select.css";
 ```
 
 ---

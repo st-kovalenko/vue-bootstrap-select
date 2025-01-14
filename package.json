@@ -22,7 +22,7 @@
             "import": "./dist/vue-bootstrap-select.es.js",
             "require": "./dist/vue-bootstrap-select.umd.js"
         },
-        "./dist/style.css": "./dist/style.css"
+        "./dist/vue-bootstrap-select.css": "./dist/vue-bootstrap-select.css"
     },
     "scripts": {
         "dev": "vite",
